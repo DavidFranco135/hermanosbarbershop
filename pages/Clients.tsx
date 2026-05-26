@@ -18,7 +18,7 @@ const Clients: React.FC = () => {
     profession: '', instagram: '', howFound: '',
   });
 
-  const IMGBB_KEY = 'da736db48f154b9108b23a36d4393848';
+  const IMGBB_KEY = '12cec26c3fbee09a760302bf12484aaf';
   const [photoLightbox, setPhotoLightbox] = useState<string | null>(null);
   const [photoUploading, setPhotoUploading] = useState(false);
 

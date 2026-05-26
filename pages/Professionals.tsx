@@ -4,7 +4,7 @@ import { useBarberStore } from '../store';
 import { Professional } from '../types';
 
 // ── ImgBB ─────────────────────────────────────────────────────
-const IMGBB_API_KEY = 'da736db48f154b9108b23a36d4393848';
+const IMGBB_API_KEY = '12cec26c3fbee09a760302bf12484aaf';
 function resizeImage(file: File, maxPx: number, q: number): Promise<Blob> {
   return new Promise((res, rej) => {
     const img = new Image(), url = URL.createObjectURL(file);

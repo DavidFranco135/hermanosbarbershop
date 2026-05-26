@@ -41,7 +41,7 @@ const Settings: React.FC = () => {
     name: '', price: 0, period: 'MENSAL', benefits: [''], status: 'ATIVO', maxCuts: 4, vipCommissionPct: 50, members: []
   });
 
-  const IMGBB_API_KEY = 'da736db48f154b9108b23a36d4393848';
+  const IMGBB_API_KEY = '12cec26c3fbee09a760302bf12484aaf';
 
   const uploadToImgBB = async (file: File): Promise<string> => {
     const data = new FormData();
@@ -367,7 +367,7 @@ const Settings: React.FC = () => {
                 try {
                   const data = new FormData();
                   data.append('image', file);
-                  const res = await fetch('https://api.imgbb.com/1/upload?key=da736db48f154b9108b23a36d4393848', { method: 'POST', body: data });
+                  const res = await fetch('https://api.imgbb.com/1/upload?key=12cec26c3fbee09a760302bf12484aaf', { method: 'POST', body: data });
                   const json = await res.json();
                   if (!json.success) throw new Error('Falha');
                   const url = json.data.url;
@@ -1006,7 +1006,7 @@ const Settings: React.FC = () => {
                   await addDoc(collection(db, 'auditLog'), {
                     action: 'PASSWORD_CHANGED',
                     changedBy: user?.name || 'Admin',
-                    changedByEmail: user?.email || 'hermanosadm@gmail.com',
+                    changedByEmail: user?.email || 'novojeitoadm@gmail.com',
                     timestamp: new Date().toISOString(),
                     device: navigator.userAgent,
                     ip: await fetch('https://api.ipify.org?format=json').then(r => r.json()).then(d => d.ip).catch(() => 'desconhecido'),

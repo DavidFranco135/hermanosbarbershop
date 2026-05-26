@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import { Camera, Trash2, X, FolderPlus, Folder, ChevronLeft, ImageIcon, Edit2, Check } from 'lucide-react';
 import { useBarberStore } from '../store';
 
-const IMGBB_KEY = 'da736db48f154b9108b23a36d4393848';
+const IMGBB_KEY = '12cec26c3fbee09a760302bf12484aaf';
 
 export interface CutPhoto { url: string; desc: string; }
 export interface CutAlbum { id: string; name: string; photos: CutPhoto[]; }

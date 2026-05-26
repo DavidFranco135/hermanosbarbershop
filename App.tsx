@@ -152,9 +152,6 @@ const App: React.FC = () => {
     return (
       <div className={`relative min-h-screen theme-transition ${theme === 'light' ? 'bg-[#F8F9FA]' : 'bg-[#050505]'}`}>
         <div className="fixed bottom-8 left-8 z-[100] flex gap-3">
-          <button onClick={toggleTheme} className={`p-4 rounded-2xl border shadow-2xl transition-all ${theme === 'light' ? 'bg-white border-zinc-200 text-zinc-600 hover:text-zinc-900' : 'bg-[#C58A4A] text-black border-transparent'}`}>
-            {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
-          </button>
         </div>
         <PublicBooking initialView="CLIENT_DASHBOARD" />
       </div>
@@ -166,9 +163,6 @@ const App: React.FC = () => {
     return (
       <div className={`relative min-h-screen theme-transition ${theme === 'light' ? 'bg-[#F8F9FA]' : 'bg-[#050505]'}`}>
         <div className="fixed bottom-8 left-8 z-[100] flex gap-3">
-          <button onClick={toggleTheme} className={`p-4 rounded-2xl border shadow-2xl transition-all ${theme === 'light' ? 'bg-white border-zinc-200 text-zinc-600 hover:text-zinc-900' : 'bg-[#66360f] text-black border-transparent'}`}>
-            {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
-          </button>
           <button onClick={() => { localStorage.removeItem('nj_client_session'); localStorage.removeItem('brb_user'); logout(); setIsPublicView(false); }} className={`p-4 rounded-2xl border shadow-2xl transition-all ${theme === 'light' ? 'bg-white border-zinc-200 text-zinc-600 hover:text-zinc-900' : 'bg-zinc-900 border-white/10 text-white hover:bg-zinc-800'}`}>
             <LogOut size={24} />
           </button>
@@ -187,9 +181,7 @@ const App: React.FC = () => {
            <div className={`absolute inset-0 bg-gradient-to-t ${theme === 'light' ? 'from-[#F8F9FA] via-transparent to-[#F8F9FA]' : 'from-[#050505] via-transparent to-[#050505]'}`}></div>
         </div>
 
-        <button onClick={toggleTheme} className={`absolute top-10 right-10 p-4 rounded-2xl border transition-all z-20 ${theme === 'light' ? 'bg-white border-zinc-200 text-zinc-600 shadow-lg hover:text-zinc-900' : 'bg-white/5 border-white/10 text-zinc-400'}`}>
-          {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
-        </button>
+
 
         <div className={`w-full max-w-lg rounded-[4rem] p-12 md:p-20 space-y-12 animate-in fade-in zoom-in duration-1000 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] relative z-10 ${theme === 'light' ? 'bg-white border border-zinc-200' : 'cartao-vidro border-white/5'}`}>
           <div className={`absolute top-0 inset-x-0 h-1.5 gradiente-ouro rounded-t-[4rem]`}></div>
@@ -199,7 +191,7 @@ const App: React.FC = () => {
                <img src={config.logo} className="w-full h-full object-cover" alt="Logo/Profile" />
             </div>
             <div className="space-y-2">
-              <h1 className={`text-4xl font-black font-display italic tracking-tight ${theme === 'light' ? 'text-zinc-900' : 'text-white'}`}>{isRegistering ? 'Criar Conta' : 'Portal Hermanos'}</h1>
+              <h1 className={`text-4xl font-black font-display italic tracking-tight ${theme === 'light' ? 'text-zinc-900' : 'text-white'}`}>{isRegistering ? 'Criar Conta' : 'Portal Novo Jeito'}</h1>
               <p className={`text-[10px] font-black uppercase tracking-[0.4em] ${theme === 'light' ? 'text-zinc-500' : 'opacity-40'}`}>{isRegistering ? 'Cadastre-se para agendar' : 'Acesse para gerir ou agendar'}</p>
             </div>
           </div>
@@ -209,7 +201,7 @@ const App: React.FC = () => {
               <div className="space-y-4">
                 <div className="space-y-2">
                   <label className={`text-[10px] font-black uppercase tracking-widest ml-2 ${theme === 'light' ? 'text-zinc-600' : 'opacity-40'}`}>E-mail ou WhatsApp</label>
-                  <input type="text" placeholder="hermanosadm@gmail.com ou (21)..." value={loginIdentifier} onChange={e => setLoginIdentifier(e.target.value)} className={`w-full border p-6 rounded-[2rem] outline-none focus:border-[#C58A4A] transition-all font-bold text-lg ${theme === 'light' ? 'bg-zinc-50 border-zinc-300 text-zinc-900 placeholder:text-zinc-400' : 'bg-white/5 border-white/10 text-white'}`} />
+                  <input type="text" placeholder="novojeitoadm@gmail.com ou (21)..." value={loginIdentifier} onChange={e => setLoginIdentifier(e.target.value)} className={`w-full border p-6 rounded-[2rem] outline-none focus:border-[#C58A4A] transition-all font-bold text-lg ${theme === 'light' ? 'bg-zinc-50 border-zinc-300 text-zinc-900 placeholder:text-zinc-400' : 'bg-white/5 border-white/10 text-white'}`} />
                 </div>
                 <div className="space-y-2">
                   <label className={`text-[10px] font-black uppercase tracking-widest ml-2 ${theme === 'light' ? 'text-zinc-600' : 'opacity-40'}`}>Senha</label>
@@ -253,7 +245,7 @@ const App: React.FC = () => {
               <div className="space-y-4">
                 <p className={`text-[10px] font-black uppercase tracking-widest ${theme === 'light' ? 'text-zinc-500' : 'text-zinc-400'}`}>E-mail ou WhatsApp cadastrado</p>
                 {forgotAdmError && <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-[10px] font-black">{forgotAdmError}</div>}
-                <input type="text" placeholder="hermanosadm@gmail.com" value={forgotAdmPhone} onChange={e => setForgotAdmPhone(e.target.value)} className={`w-full border p-5 rounded-2xl outline-none font-bold ${theme === 'light' ? 'bg-zinc-50 border-zinc-300 text-zinc-900' : 'bg-white/5 border-white/10 text-white'}`} />
+                <input type="text" placeholder="novojeitoadm@gmail.com" value={forgotAdmPhone} onChange={e => setForgotAdmPhone(e.target.value)} className={`w-full border p-5 rounded-2xl outline-none font-bold ${theme === 'light' ? 'bg-zinc-50 border-zinc-300 text-zinc-900' : 'bg-white/5 border-white/10 text-white'}`} />
                 <button onClick={() => { setForgotAdmError(null); setForgotAdmStep('reset'); }} className="w-full gradiente-ouro text-black py-4 rounded-2xl font-black uppercase text-[10px]">CONTINUAR</button>
               </div>
             ) : (
